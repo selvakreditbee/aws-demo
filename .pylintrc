@@ -1,0 +1,10 @@
+[MESSAGE]
+disable = fixme, unused-import
+
+[pep8]
+max-line-length = 72
+
+[SIMILARITIES]
+# ignore imports when computing similarities
+ignore-imports = yes
+min-similarity-lines=5
