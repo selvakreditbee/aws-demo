@@ -22,7 +22,7 @@ jobs:
         pylint main
     - name: Lint with flake8
       run: |
-        flake8 main
+        flake8 main.py
     - name: Test with pytest
       run: |
         pytest
