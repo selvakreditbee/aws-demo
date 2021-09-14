@@ -1,16 +1,14 @@
-name: Linting
+name: CI - Linting WorkFlow
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
+      - 'releases/**'
 
 jobs:
-  build:
-
+  linting:
+    name: Check the code format using linting process
     runs-on: ubuntu-latest
 
     steps:
@@ -29,3 +27,8 @@ jobs:
     - name: Lint with flake8
       run: |
         flake8 main.py
+  
+  deploy:
+    name: Build docker image and push to aws ECR
+    needs: linting
+    runs-on: ubuntu-latest
